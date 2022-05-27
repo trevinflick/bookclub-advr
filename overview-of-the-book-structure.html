@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1.2 Overview of the book structure | Advanced R Book Club</title>
+  <meta name="description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1.2 Overview of the book structure | Advanced R Book Club" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
+  <meta name="github-repo" content="r4ds/bookclub-advr" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1.2 Overview of the book structure | Advanced R Book Club" />
+  
+  <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
+  
+
+<meta name="author" content="The R4DS Online Learning Community" />
+
+
+<meta name="date" content="2022-05-27" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="whats-new.html"/>
+<link rel="next" href="resources.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.9/DiagrammeR.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Advanced R Book Club</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a>
+<ul>
+<li class="chapter" data-level="" data-path="book-club-meetings.html"><a href="book-club-meetings.html"><i class="fa fa-check"></i>Book club meetings</a></li>
+<li class="chapter" data-level="" data-path="pace.html"><a href="pace.html"><i class="fa fa-check"></i>Pace</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="whats-new.html"><a href="whats-new.html"><i class="fa fa-check"></i><b>1.1</b> What’s new?</a></li>
+<li class="chapter" data-level="1.2" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html"><i class="fa fa-check"></i><b>1.2</b> Overview of the book structure</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html#foundations"><i class="fa fa-check"></i><b>1.2.1</b> Foundations</a></li>
+<li class="chapter" data-level="1.2.2" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html#functional-programming"><i class="fa fa-check"></i><b>1.2.2</b> Functional programming</a></li>
+<li class="chapter" data-level="1.2.3" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html#object-oriented-programming"><i class="fa fa-check"></i><b>1.2.3</b> Object-oriented programming</a></li>
+<li class="chapter" data-level="1.2.4" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html#metaprogramming"><i class="fa fa-check"></i><b>1.2.4</b> Metaprogramming</a></li>
+<li class="chapter" data-level="1.2.5" data-path="overview-of-the-book-structure.html"><a href="overview-of-the-book-structure.html#techniques"><i class="fa fa-check"></i><b>1.2.5</b> Techniques</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>1.3</b> Resources</a></li>
+<li class="chapter" data-level="1.4" data-path="meeting-videos.html"><a href="meeting-videos.html"><i class="fa fa-check"></i><b>1.4</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-1"><i class="fa fa-check"></i><b>1.4.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="1.4.2" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-2"><i class="fa fa-check"></i><b>1.4.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="1.4.3" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-3"><i class="fa fa-check"></i><b>1.4.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="1.4.4" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-4"><i class="fa fa-check"></i><b>1.4.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="1.4.5" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-5"><i class="fa fa-check"></i><b>1.4.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="1.4.6" data-path="meeting-videos.html"><a href="meeting-videos.html#cohort-6"><i class="fa fa-check"></i><b>1.4.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="names-and-values.html"><a href="names-and-values.html"><i class="fa fa-check"></i><b>2</b> Names and values</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="slide-1.html"><a href="slide-1.html"><i class="fa fa-check"></i><b>2.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="2.2" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html"><i class="fa fa-check"></i><b>2.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-1-1"><i class="fa fa-check"></i><b>2.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="2.2.2" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-2-1"><i class="fa fa-check"></i><b>2.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="2.2.3" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-3-1"><i class="fa fa-check"></i><b>2.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="2.2.4" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-4-1"><i class="fa fa-check"></i><b>2.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="2.2.5" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-5-1"><i class="fa fa-check"></i><b>2.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="2.2.6" data-path="meeting-videos-1.html"><a href="meeting-videos-1.html#cohort-6-1"><i class="fa fa-check"></i><b>2.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vectors.html"><a href="vectors.html"><i class="fa fa-check"></i><b>3</b> Vectors</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="slide-1-1.html"><a href="slide-1-1.html"><i class="fa fa-check"></i><b>3.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="3.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html"><i class="fa fa-check"></i><b>3.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-1-2"><i class="fa fa-check"></i><b>3.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="3.2.2" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-2-2"><i class="fa fa-check"></i><b>3.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="3.2.3" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-3-2"><i class="fa fa-check"></i><b>3.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="3.2.4" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-4-2"><i class="fa fa-check"></i><b>3.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="3.2.5" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-5-2"><i class="fa fa-check"></i><b>3.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="3.2.6" data-path="meeting-videos-2.html"><a href="meeting-videos-2.html#cohort-6-2"><i class="fa fa-check"></i><b>3.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="subsetting.html"><a href="subsetting.html"><i class="fa fa-check"></i><b>4</b> Subsetting</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="slide-1-2.html"><a href="slide-1-2.html"><i class="fa fa-check"></i><b>4.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="4.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html"><i class="fa fa-check"></i><b>4.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-1-3"><i class="fa fa-check"></i><b>4.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="4.2.2" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-2-3"><i class="fa fa-check"></i><b>4.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="4.2.3" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-3-3"><i class="fa fa-check"></i><b>4.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="4.2.4" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-4-3"><i class="fa fa-check"></i><b>4.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="4.2.5" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-5-3"><i class="fa fa-check"></i><b>4.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="4.2.6" data-path="meeting-videos-3.html"><a href="meeting-videos-3.html#cohort-6-3"><i class="fa fa-check"></i><b>4.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="control-flow.html"><a href="control-flow.html"><i class="fa fa-check"></i><b>5</b> Control flow</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="slide-1-3.html"><a href="slide-1-3.html"><i class="fa fa-check"></i><b>5.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="5.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html"><i class="fa fa-check"></i><b>5.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-1-4"><i class="fa fa-check"></i><b>5.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="5.2.2" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-2-4"><i class="fa fa-check"></i><b>5.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-3-4"><i class="fa fa-check"></i><b>5.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="5.2.4" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-4-4"><i class="fa fa-check"></i><b>5.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="5.2.5" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-5-4"><i class="fa fa-check"></i><b>5.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="5.2.6" data-path="meeting-videos-4.html"><a href="meeting-videos-4.html#cohort-6-4"><i class="fa fa-check"></i><b>5.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>6</b> Functions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="slide-1-4.html"><a href="slide-1-4.html"><i class="fa fa-check"></i><b>6.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="6.2" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html"><i class="fa fa-check"></i><b>6.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-1-5"><i class="fa fa-check"></i><b>6.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="6.2.2" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-2-5"><i class="fa fa-check"></i><b>6.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="6.2.3" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-3-5"><i class="fa fa-check"></i><b>6.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="6.2.4" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-4-5"><i class="fa fa-check"></i><b>6.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="6.2.5" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-5-5"><i class="fa fa-check"></i><b>6.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="6.2.6" data-path="meeting-videos-5.html"><a href="meeting-videos-5.html#cohort-6-5"><i class="fa fa-check"></i><b>6.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="environments.html"><a href="environments.html"><i class="fa fa-check"></i><b>7</b> Environments</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="slide-1-5.html"><a href="slide-1-5.html"><i class="fa fa-check"></i><b>7.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="7.2" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html"><i class="fa fa-check"></i><b>7.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-1-6"><i class="fa fa-check"></i><b>7.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="7.2.2" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-2-6"><i class="fa fa-check"></i><b>7.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="7.2.3" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-3-6"><i class="fa fa-check"></i><b>7.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="7.2.4" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-4-6"><i class="fa fa-check"></i><b>7.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="7.2.5" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-5-6"><i class="fa fa-check"></i><b>7.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="7.2.6" data-path="meeting-videos-6.html"><a href="meeting-videos-6.html#cohort-6-6"><i class="fa fa-check"></i><b>7.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="conditions.html"><a href="conditions.html"><i class="fa fa-check"></i><b>8</b> Conditions</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="slide-1-6.html"><a href="slide-1-6.html"><i class="fa fa-check"></i><b>8.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="8.2" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html"><i class="fa fa-check"></i><b>8.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-1-7"><i class="fa fa-check"></i><b>8.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="8.2.2" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-2-7"><i class="fa fa-check"></i><b>8.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="8.2.3" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-3-7"><i class="fa fa-check"></i><b>8.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="8.2.4" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-4-7"><i class="fa fa-check"></i><b>8.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="8.2.5" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-5-7"><i class="fa fa-check"></i><b>8.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="8.2.6" data-path="meeting-videos-7.html"><a href="meeting-videos-7.html#cohort-6-7"><i class="fa fa-check"></i><b>8.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="functionals.html"><a href="functionals.html"><i class="fa fa-check"></i><b>9</b> Functionals</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="slide-1-7.html"><a href="slide-1-7.html"><i class="fa fa-check"></i><b>9.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="9.2" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html"><i class="fa fa-check"></i><b>9.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-1-8"><i class="fa fa-check"></i><b>9.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="9.2.2" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-2-8"><i class="fa fa-check"></i><b>9.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="9.2.3" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-3-8"><i class="fa fa-check"></i><b>9.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="9.2.4" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-4-8"><i class="fa fa-check"></i><b>9.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="9.2.5" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-5-8"><i class="fa fa-check"></i><b>9.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="9.2.6" data-path="meeting-videos-8.html"><a href="meeting-videos-8.html#cohort-6-8"><i class="fa fa-check"></i><b>9.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="function-factories.html"><a href="function-factories.html"><i class="fa fa-check"></i><b>10</b> Function factories</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="slide-1-8.html"><a href="slide-1-8.html"><i class="fa fa-check"></i><b>10.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="10.2" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html"><i class="fa fa-check"></i><b>10.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-1-9"><i class="fa fa-check"></i><b>10.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="10.2.2" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-2-9"><i class="fa fa-check"></i><b>10.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="10.2.3" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-3-9"><i class="fa fa-check"></i><b>10.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="10.2.4" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-4-9"><i class="fa fa-check"></i><b>10.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="10.2.5" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-5-9"><i class="fa fa-check"></i><b>10.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="10.2.6" data-path="meeting-videos-9.html"><a href="meeting-videos-9.html#cohort-6-9"><i class="fa fa-check"></i><b>10.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="function-operators.html"><a href="function-operators.html"><i class="fa fa-check"></i><b>11</b> Function operators</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="slide-1-9.html"><a href="slide-1-9.html"><i class="fa fa-check"></i><b>11.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="11.2" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html"><i class="fa fa-check"></i><b>11.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-1-10"><i class="fa fa-check"></i><b>11.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="11.2.2" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-2-10"><i class="fa fa-check"></i><b>11.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="11.2.3" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-3-10"><i class="fa fa-check"></i><b>11.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="11.2.4" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-4-10"><i class="fa fa-check"></i><b>11.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="11.2.5" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-5-10"><i class="fa fa-check"></i><b>11.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="11.2.6" data-path="meeting-videos-10.html"><a href="meeting-videos-10.html#cohort-6-10"><i class="fa fa-check"></i><b>11.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="base-types.html"><a href="base-types.html"><i class="fa fa-check"></i><b>12</b> Base types</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="slide-1-10.html"><a href="slide-1-10.html"><i class="fa fa-check"></i><b>12.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="12.2" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html"><i class="fa fa-check"></i><b>12.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-1-11"><i class="fa fa-check"></i><b>12.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="12.2.2" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-2-11"><i class="fa fa-check"></i><b>12.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="12.2.3" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-3-11"><i class="fa fa-check"></i><b>12.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="12.2.4" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-4-11"><i class="fa fa-check"></i><b>12.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="12.2.5" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-5-11"><i class="fa fa-check"></i><b>12.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="12.2.6" data-path="meeting-videos-11.html"><a href="meeting-videos-11.html#cohort-6-11"><i class="fa fa-check"></i><b>12.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="s3.html"><a href="s3.html"><i class="fa fa-check"></i><b>13</b> S3</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="slide-1-11.html"><a href="slide-1-11.html"><i class="fa fa-check"></i><b>13.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="13.2" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html"><i class="fa fa-check"></i><b>13.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-1-12"><i class="fa fa-check"></i><b>13.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="13.2.2" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-2-12"><i class="fa fa-check"></i><b>13.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="13.2.3" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-3-12"><i class="fa fa-check"></i><b>13.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="13.2.4" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-4-12"><i class="fa fa-check"></i><b>13.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="13.2.5" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-5-12"><i class="fa fa-check"></i><b>13.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="13.2.6" data-path="meeting-videos-12.html"><a href="meeting-videos-12.html#cohort-6-12"><i class="fa fa-check"></i><b>13.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="r6.html"><a href="r6.html"><i class="fa fa-check"></i><b>14</b> R6</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="slide-1-12.html"><a href="slide-1-12.html"><i class="fa fa-check"></i><b>14.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="14.2" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html"><i class="fa fa-check"></i><b>14.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-1-13"><i class="fa fa-check"></i><b>14.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="14.2.2" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-2-13"><i class="fa fa-check"></i><b>14.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="14.2.3" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-3-13"><i class="fa fa-check"></i><b>14.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="14.2.4" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-4-13"><i class="fa fa-check"></i><b>14.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="14.2.5" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-5-13"><i class="fa fa-check"></i><b>14.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="14.2.6" data-path="meeting-videos-13.html"><a href="meeting-videos-13.html#cohort-6-13"><i class="fa fa-check"></i><b>14.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="s4.html"><a href="s4.html"><i class="fa fa-check"></i><b>15</b> S4</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="slide-1-13.html"><a href="slide-1-13.html"><i class="fa fa-check"></i><b>15.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="15.2" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html"><i class="fa fa-check"></i><b>15.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-1-14"><i class="fa fa-check"></i><b>15.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="15.2.2" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-2-14"><i class="fa fa-check"></i><b>15.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="15.2.3" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-3-14"><i class="fa fa-check"></i><b>15.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="15.2.4" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-4-14"><i class="fa fa-check"></i><b>15.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="15.2.5" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-5-14"><i class="fa fa-check"></i><b>15.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="15.2.6" data-path="meeting-videos-14.html"><a href="meeting-videos-14.html#cohort-6-14"><i class="fa fa-check"></i><b>15.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="trade-offs.html"><a href="trade-offs.html"><i class="fa fa-check"></i><b>16</b> Trade-offs</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="slide-1-14.html"><a href="slide-1-14.html"><i class="fa fa-check"></i><b>16.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="16.2" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html"><i class="fa fa-check"></i><b>16.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-1-15"><i class="fa fa-check"></i><b>16.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="16.2.2" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-2-15"><i class="fa fa-check"></i><b>16.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="16.2.3" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-3-15"><i class="fa fa-check"></i><b>16.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="16.2.4" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-4-15"><i class="fa fa-check"></i><b>16.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="16.2.5" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-5-15"><i class="fa fa-check"></i><b>16.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="16.2.6" data-path="meeting-videos-15.html"><a href="meeting-videos-15.html#cohort-6-15"><i class="fa fa-check"></i><b>16.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="big-picture.html"><a href="big-picture.html"><i class="fa fa-check"></i><b>17</b> Big picture</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="slide-1-15.html"><a href="slide-1-15.html"><i class="fa fa-check"></i><b>17.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="17.2" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html"><i class="fa fa-check"></i><b>17.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="17.2.1" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-1-16"><i class="fa fa-check"></i><b>17.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="17.2.2" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-2-16"><i class="fa fa-check"></i><b>17.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="17.2.3" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-3-16"><i class="fa fa-check"></i><b>17.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="17.2.4" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-4-16"><i class="fa fa-check"></i><b>17.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="17.2.5" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-5-16"><i class="fa fa-check"></i><b>17.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="17.2.6" data-path="meeting-videos-16.html"><a href="meeting-videos-16.html#cohort-6-16"><i class="fa fa-check"></i><b>17.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="expressions.html"><a href="expressions.html"><i class="fa fa-check"></i><b>18</b> Expressions</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="slide-1-16.html"><a href="slide-1-16.html"><i class="fa fa-check"></i><b>18.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="18.2" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html"><i class="fa fa-check"></i><b>18.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-1-17"><i class="fa fa-check"></i><b>18.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="18.2.2" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-2-17"><i class="fa fa-check"></i><b>18.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="18.2.3" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-3-17"><i class="fa fa-check"></i><b>18.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="18.2.4" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-4-17"><i class="fa fa-check"></i><b>18.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="18.2.5" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-5-17"><i class="fa fa-check"></i><b>18.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="18.2.6" data-path="meeting-videos-17.html"><a href="meeting-videos-17.html#cohort-6-17"><i class="fa fa-check"></i><b>18.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="quasiquotation.html"><a href="quasiquotation.html"><i class="fa fa-check"></i><b>19</b> Quasiquotation</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="slide-1-17.html"><a href="slide-1-17.html"><i class="fa fa-check"></i><b>19.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="19.2" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html"><i class="fa fa-check"></i><b>19.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-1-18"><i class="fa fa-check"></i><b>19.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="19.2.2" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-2-18"><i class="fa fa-check"></i><b>19.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="19.2.3" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-3-18"><i class="fa fa-check"></i><b>19.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="19.2.4" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-4-18"><i class="fa fa-check"></i><b>19.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="19.2.5" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-5-18"><i class="fa fa-check"></i><b>19.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="19.2.6" data-path="meeting-videos-18.html"><a href="meeting-videos-18.html#cohort-6-18"><i class="fa fa-check"></i><b>19.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="evaluation.html"><a href="evaluation.html"><i class="fa fa-check"></i><b>20</b> Evaluation</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="slide-1-18.html"><a href="slide-1-18.html"><i class="fa fa-check"></i><b>20.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="20.2" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html"><i class="fa fa-check"></i><b>20.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="20.2.1" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-1-19"><i class="fa fa-check"></i><b>20.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="20.2.2" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-2-19"><i class="fa fa-check"></i><b>20.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="20.2.3" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-3-19"><i class="fa fa-check"></i><b>20.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="20.2.4" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-4-19"><i class="fa fa-check"></i><b>20.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="20.2.5" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-5-19"><i class="fa fa-check"></i><b>20.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="20.2.6" data-path="meeting-videos-19.html"><a href="meeting-videos-19.html#cohort-6-19"><i class="fa fa-check"></i><b>20.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="translating-r-code.html"><a href="translating-r-code.html"><i class="fa fa-check"></i><b>21</b> Translating R code</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="slide-1-19.html"><a href="slide-1-19.html"><i class="fa fa-check"></i><b>21.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="21.2" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html"><i class="fa fa-check"></i><b>21.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="21.2.1" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-1-20"><i class="fa fa-check"></i><b>21.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="21.2.2" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-2-20"><i class="fa fa-check"></i><b>21.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="21.2.3" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-3-20"><i class="fa fa-check"></i><b>21.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="21.2.4" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-4-20"><i class="fa fa-check"></i><b>21.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="21.2.5" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-5-20"><i class="fa fa-check"></i><b>21.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="21.2.6" data-path="meeting-videos-20.html"><a href="meeting-videos-20.html#cohort-6-20"><i class="fa fa-check"></i><b>21.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="debugging.html"><a href="debugging.html"><i class="fa fa-check"></i><b>22</b> Debugging</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="slide-1-20.html"><a href="slide-1-20.html"><i class="fa fa-check"></i><b>22.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="22.2" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html"><i class="fa fa-check"></i><b>22.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="22.2.1" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-1-21"><i class="fa fa-check"></i><b>22.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="22.2.2" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-2-21"><i class="fa fa-check"></i><b>22.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="22.2.3" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-3-21"><i class="fa fa-check"></i><b>22.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="22.2.4" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-4-21"><i class="fa fa-check"></i><b>22.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="22.2.5" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-5-21"><i class="fa fa-check"></i><b>22.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="22.2.6" data-path="meeting-videos-21.html"><a href="meeting-videos-21.html#cohort-6-21"><i class="fa fa-check"></i><b>22.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="measuring-performance.html"><a href="measuring-performance.html"><i class="fa fa-check"></i><b>23</b> Measuring performance</a>
+<ul>
+<li class="chapter" data-level="23.1" data-path="slide-1-21.html"><a href="slide-1-21.html"><i class="fa fa-check"></i><b>23.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="23.2" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html"><i class="fa fa-check"></i><b>23.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="23.2.1" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-1-22"><i class="fa fa-check"></i><b>23.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="23.2.2" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-2-22"><i class="fa fa-check"></i><b>23.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="23.2.3" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-3-22"><i class="fa fa-check"></i><b>23.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="23.2.4" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-4-22"><i class="fa fa-check"></i><b>23.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="23.2.5" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-5-22"><i class="fa fa-check"></i><b>23.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="23.2.6" data-path="meeting-videos-22.html"><a href="meeting-videos-22.html#cohort-6-22"><i class="fa fa-check"></i><b>23.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="24" data-path="improving-performance.html"><a href="improving-performance.html"><i class="fa fa-check"></i><b>24</b> Improving performance</a>
+<ul>
+<li class="chapter" data-level="24.1" data-path="slide-1-22.html"><a href="slide-1-22.html"><i class="fa fa-check"></i><b>24.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="24.2" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html"><i class="fa fa-check"></i><b>24.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="24.2.1" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-1-23"><i class="fa fa-check"></i><b>24.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="24.2.2" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-2-23"><i class="fa fa-check"></i><b>24.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="24.2.3" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-3-23"><i class="fa fa-check"></i><b>24.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="24.2.4" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-4-23"><i class="fa fa-check"></i><b>24.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="24.2.5" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-5-23"><i class="fa fa-check"></i><b>24.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="24.2.6" data-path="meeting-videos-23.html"><a href="meeting-videos-23.html#cohort-6-23"><i class="fa fa-check"></i><b>24.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="25" data-path="rewriting-r-code-in-c.html"><a href="rewriting-r-code-in-c.html"><i class="fa fa-check"></i><b>25</b> Rewriting R code in C++</a>
+<ul>
+<li class="chapter" data-level="25.1" data-path="slide-1-23.html"><a href="slide-1-23.html"><i class="fa fa-check"></i><b>25.1</b> SLIDE 1</a></li>
+<li class="chapter" data-level="25.2" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html"><i class="fa fa-check"></i><b>25.2</b> Meeting Videos</a>
+<ul>
+<li class="chapter" data-level="25.2.1" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-1-24"><i class="fa fa-check"></i><b>25.2.1</b> Cohort 1</a></li>
+<li class="chapter" data-level="25.2.2" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-2-24"><i class="fa fa-check"></i><b>25.2.2</b> Cohort 2</a></li>
+<li class="chapter" data-level="25.2.3" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-3-24"><i class="fa fa-check"></i><b>25.2.3</b> Cohort 3</a></li>
+<li class="chapter" data-level="25.2.4" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-4-24"><i class="fa fa-check"></i><b>25.2.4</b> Cohort 4</a></li>
+<li class="chapter" data-level="25.2.5" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-5-24"><i class="fa fa-check"></i><b>25.2.5</b> Cohort 5</a></li>
+<li class="chapter" data-level="25.2.6" data-path="meeting-videos-24.html"><a href="meeting-videos-24.html#cohort-6-24"><i class="fa fa-check"></i><b>25.2.6</b> Cohort 6</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Advanced R Book Club</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="overview-of-the-book-structure" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Overview of the book structure<a href="overview-of-the-book-structure.html#overview-of-the-book-structure" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The book is composed of five sections. A step by step path towards mastering R techniques.
+The <strong>Foundations</strong> is the part in which the R components will be examined. It will help understanding how to use all the basics tools to deal with functions and structures.
+The <strong>Functional programming</strong> goes a little more in dept into programming with R, making functions of functions. Describing function factories and operators.
+The <strong>Object-oriented programming</strong> - OOP is a five chapter section, all about object oriented systems among S3, R6 and S4.
+The <strong>Metaprogramming</strong> section introduces you through the programming layers.
+Finally, the <strong>Techniques</strong> section is dedicated to finding and fixing bugs and improving performances.</p>
+<center>
+<div id="htmlwidget-509092e8b06d0bf2d9ce" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-509092e8b06d0bf2d9ce">{"x":{"diagram":"\n   graph TD\n     A{Foundations}-->B(Functional programming)\n     B-->C(Object-oriented programming)\n     C-->D(Metaprogramming)\n     D-->E(Techniques)\n "},"evals":[],"jsHooks":[]}</script>
+</center>
+<div id="foundations" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Foundations<a href="overview-of-the-book-structure.html#foundations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+Six chapters to learn the foundational components of R.
+<center>
+<div id="htmlwidget-b4f1955e78140b600a70" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b4f1955e78140b600a70">{"x":{"diagram":"\n   graph TD\n     A{Foundations}-->B(Names and values)\n     A-->C(Control flow)\n     C-->E(Functions)\n     B-->D(Vectors)\n     D-->F(Subsetting)\n     E-->G(Environment)\n     G-->H(Conditions)\nF-->H\n "},"evals":[],"jsHooks":[]}</script>
+</center>
+<p>The last chapter “conditions” describe errors, warnings, and messages.</p>
+</div>
+<div id="functional-programming" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Functional programming<a href="overview-of-the-book-structure.html#functional-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This part of the book is dedicated to functions: function factories and operators.</p>
+<center>
+<div id="htmlwidget-2b8928a6d0e48e4a10de" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2b8928a6d0e48e4a10de">{"x":{"diagram":"\n   graph TD\n     A{Functional programming}-->B(Functionals)\n     B-->C(Function factories)\n     B-->E(Function operators)\n "},"evals":[],"jsHooks":[]}</script>
+</center>
+</div>
+<div id="object-oriented-programming" class="section level3 hasAnchor" number="1.2.3">
+<h3><span class="header-section-number">1.2.3</span> Object-oriented programming<a href="overview-of-the-book-structure.html#object-oriented-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>OOP is the most dense part of the book, as it mentions about systems which interact with R.</p>
+<center>
+<div id="htmlwidget-3f48ccfa7e845ec68c13" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3f48ccfa7e845ec68c13">{"x":{"diagram":"\n   graph TD\n     A{Object-oriented programming}-->B(Base types)\n     B-->C(S3)\n     B-->E(R6)\n     B-->D(S4)\n     D-->F(Trade-offs)\n     E-->F\n     C-->F\n"},"evals":[],"jsHooks":[]}</script>
+</center>
+</div>
+<div id="metaprogramming" class="section level3 hasAnchor" number="1.2.4">
+<h3><span class="header-section-number">1.2.4</span> Metaprogramming<a href="overview-of-the-book-structure.html#metaprogramming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is the part of the book where things are blended to the <strong>Big Picture</strong>. R is a versatile functional language that can be managed and assembled.</p>
+<center>
+<div id="htmlwidget-500ffa63e56f0a66daed" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-500ffa63e56f0a66daed">{"x":{"diagram":"\n   graph TD\n     A{Metaprogramming}-->B(Big Picture)\n     B-->C(Expressions)\n     B-->E(Quasiquotation)\n     B-->D(Evaluation)\n\n     D-->F(Translating R code)\nE-->F\nC-->F\n\n "},"evals":[],"jsHooks":[]}</script>
+</center>
+</div>
+<div id="techniques" class="section level3 hasAnchor" number="1.2.5">
+<h3><span class="header-section-number">1.2.5</span> Techniques<a href="overview-of-the-book-structure.html#techniques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Finally, this is the last section of the book, where debugging is used to measure and improve performance. And how to improve performance by rewriting key functions in C++.</p>
+<center>
+<div id="htmlwidget-94f83fe2056b9a1e4b3b" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-94f83fe2056b9a1e4b3b">{"x":{"diagram":"\n   graph TD\n     A{Techniques}-->B(Debugging)\n     B-->C(Measuring performance)\n     B-->E(Improving performance)\n     C-->D(Rewriting R code in C++)\nE-->D\n\n\n "},"evals":[],"jsHooks":[]}</script>
+</center>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="whats-new.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="resources.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/r4ds/bookclub-advr/edit/main/01_Introduction.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

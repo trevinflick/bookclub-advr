@@ -1,5 +1,13 @@
+fig:unnamed-chunk-1
 introduction
-slide-1
+whats-new
+overview-of-the-book-structure
+foundations
+functional-programming
+object-oriented-programming
+metaprogramming
+techniques
+resources
 meeting-videos
 cohort-1
 cohort-2
@@ -8,7 +16,7 @@ cohort-4
 cohort-5
 cohort-6
 names-and-values
-slide-1-1
+slide-1
 meeting-videos-1
 cohort-1-1
 cohort-2-1
@@ -17,7 +25,7 @@ cohort-4-1
 cohort-5-1
 cohort-6-1
 vectors
-slide-1-2
+slide-1-1
 meeting-videos-2
 cohort-1-2
 cohort-2-2
@@ -26,7 +34,7 @@ cohort-4-2
 cohort-5-2
 cohort-6-2
 subsetting
-slide-1-3
+slide-1-2
 meeting-videos-3
 cohort-1-3
 cohort-2-3
@@ -35,7 +43,7 @@ cohort-4-3
 cohort-5-3
 cohort-6-3
 control-flow
-slide-1-4
+slide-1-3
 meeting-videos-4
 cohort-1-4
 cohort-2-4
@@ -44,7 +52,7 @@ cohort-4-4
 cohort-5-4
 cohort-6-4
 functions
-slide-1-5
+slide-1-4
 meeting-videos-5
 cohort-1-5
 cohort-2-5
@@ -53,7 +61,7 @@ cohort-4-5
 cohort-5-5
 cohort-6-5
 environments
-slide-1-6
+slide-1-5
 meeting-videos-6
 cohort-1-6
 cohort-2-6
@@ -62,7 +70,7 @@ cohort-4-6
 cohort-5-6
 cohort-6-6
 conditions
-slide-1-7
+slide-1-6
 meeting-videos-7
 cohort-1-7
 cohort-2-7
@@ -71,7 +79,7 @@ cohort-4-7
 cohort-5-7
 cohort-6-7
 functionals
-slide-1-8
+slide-1-7
 meeting-videos-8
 cohort-1-8
 cohort-2-8
@@ -80,7 +88,7 @@ cohort-4-8
 cohort-5-8
 cohort-6-8
 function-factories
-slide-1-9
+slide-1-8
 meeting-videos-9
 cohort-1-9
 cohort-2-9
@@ -89,7 +97,7 @@ cohort-4-9
 cohort-5-9
 cohort-6-9
 function-operators
-slide-1-10
+slide-1-9
 meeting-videos-10
 cohort-1-10
 cohort-2-10
@@ -98,7 +106,7 @@ cohort-4-10
 cohort-5-10
 cohort-6-10
 base-types
-slide-1-11
+slide-1-10
 meeting-videos-11
 cohort-1-11
 cohort-2-11
@@ -107,7 +115,7 @@ cohort-4-11
 cohort-5-11
 cohort-6-11
 s3
-slide-1-12
+slide-1-11
 meeting-videos-12
 cohort-1-12
 cohort-2-12
@@ -116,7 +124,7 @@ cohort-4-12
 cohort-5-12
 cohort-6-12
 r6
-slide-1-13
+slide-1-12
 meeting-videos-13
 cohort-1-13
 cohort-2-13
@@ -125,7 +133,7 @@ cohort-4-13
 cohort-5-13
 cohort-6-13
 s4
-slide-1-14
+slide-1-13
 meeting-videos-14
 cohort-1-14
 cohort-2-14
@@ -134,7 +142,7 @@ cohort-4-14
 cohort-5-14
 cohort-6-14
 trade-offs
-slide-1-15
+slide-1-14
 meeting-videos-15
 cohort-1-15
 cohort-2-15
@@ -143,7 +151,7 @@ cohort-4-15
 cohort-5-15
 cohort-6-15
 big-picture
-slide-1-16
+slide-1-15
 meeting-videos-16
 cohort-1-16
 cohort-2-16
@@ -152,7 +160,7 @@ cohort-4-16
 cohort-5-16
 cohort-6-16
 expressions
-slide-1-17
+slide-1-16
 meeting-videos-17
 cohort-1-17
 cohort-2-17
@@ -161,7 +169,7 @@ cohort-4-17
 cohort-5-17
 cohort-6-17
 quasiquotation
-slide-1-18
+slide-1-17
 meeting-videos-18
 cohort-1-18
 cohort-2-18
@@ -170,7 +178,7 @@ cohort-4-18
 cohort-5-18
 cohort-6-18
 evaluation
-slide-1-19
+slide-1-18
 meeting-videos-19
 cohort-1-19
 cohort-2-19
@@ -179,7 +187,7 @@ cohort-4-19
 cohort-5-19
 cohort-6-19
 translating-r-code
-slide-1-20
+slide-1-19
 meeting-videos-20
 cohort-1-20
 cohort-2-20
@@ -188,7 +196,7 @@ cohort-4-20
 cohort-5-20
 cohort-6-20
 debugging
-slide-1-21
+slide-1-20
 meeting-videos-21
 cohort-1-21
 cohort-2-21
@@ -197,7 +205,7 @@ cohort-4-21
 cohort-5-21
 cohort-6-21
 measuring-performance
-slide-1-22
+slide-1-21
 meeting-videos-22
 cohort-1-22
 cohort-2-22
@@ -206,7 +214,7 @@ cohort-4-22
 cohort-5-22
 cohort-6-22
 improving-performance
-slide-1-23
+slide-1-22
 meeting-videos-23
 cohort-1-23
 cohort-2-23
@@ -215,7 +223,7 @@ cohort-4-23
 cohort-5-23
 cohort-6-23
 rewriting-r-code-in-c
-slide-1-24
+slide-1-23
 meeting-videos-24
 cohort-1-24
 cohort-2-24
