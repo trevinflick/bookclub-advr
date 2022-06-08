@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1 SLIDE 1 | Advanced R Book Club</title>
+  <title>3.3 Attributes | Advanced R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta property="og:title" content="3.3 Attributes | Advanced R Book Club" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-advr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta name="twitter:title" content="3.3 Attributes | Advanced R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="subsetting.html"/>
-<link rel="next" href="meeting-videos-3.html"/>
+<link rel="prev" href="atomic-vectors.html"/>
+<link rel="next" href="s3-atomic-vectors.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -539,20 +539,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="slide-1-1" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> SLIDE 1<a href="slide-1-1.html#slide-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="attributes" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Attributes<a href="attributes.html#attributes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>ADD SLIDES AS SECTIONS (<code>##</code>).</li>
-<li>TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>What</li>
+<li>How</li>
+<li>Why</li>
 </ul>
+<div id="what" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> What<a href="attributes.html#what" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two perspectives:</p>
+<ul>
+<li>Name-value pairs</li>
+<li>Metadata</li>
+</ul>
+<p><strong>Name-value pairs</strong></p>
+<p>Formally, attributes have a name and a value.</p>
+<p><strong>Metadata</strong></p>
+<ul>
+<li>Not data itself</li>
+<li>But data about the data</li>
+</ul>
+</div>
+<div id="how" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> How<a href="attributes.html#how" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two operations:</p>
+<ol style="list-style-type: decimal">
+<li>Get</li>
+<li>Set</li>
+</ol>
+<p>Two cases:</p>
+<ol style="list-style-type: decimal">
+<li>Single attribute</li>
+<li>Multiple attributes</li>
+</ol>
+<p><strong>Single attribute</strong></p>
+<p>Use <code>attr()</code></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="attributes.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># some object</span></span>
+<span id="cb14-2"><a href="attributes.html#cb14-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb14-3"><a href="attributes.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="attributes.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># set attribute</span></span>
+<span id="cb14-5"><a href="attributes.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(<span class="at">x =</span> a, <span class="at">which =</span> <span class="st">&quot;some_attribute_name&quot;</span>) <span class="ot">&lt;-</span> <span class="st">&quot;some attribute&quot;</span></span>
+<span id="cb14-6"><a href="attributes.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="attributes.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># get attribute</span></span>
+<span id="cb14-8"><a href="attributes.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(<span class="at">x =</span> a, <span class="at">which =</span> <span class="st">&quot;some_attribute_name&quot;</span>)</span>
+<span id="cb14-9"><a href="attributes.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;some attribute&quot;</span></span></code></pre></div>
+<p><strong>Multiple attributes</strong></p>
+<p>To set multiple attributes, use <code>structure()</code>
+To get multiple attributes, use <code>attributes()</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="attributes.html#cb15-1" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>)</span>
+<span id="cb15-2"><a href="attributes.html#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="attributes.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># set</span></span>
+<span id="cb15-4"><a href="attributes.html#cb15-4" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">structure</span>(</span>
+<span id="cb15-5"><a href="attributes.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.Data =</span> b,</span>
+<span id="cb15-6"><a href="attributes.html#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">attrib1 =</span> <span class="st">&quot;one&quot;</span>,</span>
+<span id="cb15-7"><a href="attributes.html#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">attrib2 =</span> <span class="st">&quot;two&quot;</span></span>
+<span id="cb15-8"><a href="attributes.html#cb15-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-9"><a href="attributes.html#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="attributes.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="co"># get</span></span>
+<span id="cb15-11"><a href="attributes.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(<span class="fu">attributes</span>(b))</span>
+<span id="cb15-12"><a href="attributes.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; List of 2</span></span>
+<span id="cb15-13"><a href="attributes.html#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ attrib1: chr &quot;one&quot;</span></span>
+<span id="cb15-14"><a href="attributes.html#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ attrib2: chr &quot;two&quot;</span></span></code></pre></div>
+</div>
+<div id="why" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Why<a href="attributes.html#why" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Two common use cases:</p>
+<ul>
+<li>Names</li>
+<li>Dimensions</li>
+</ul>
+<p><strong>Names</strong></p>
+<p><del>Three</del> Four ways to name:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="attributes.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. At creation</span></span>
+<span id="cb16-2"><a href="attributes.html#cb16-2" aria-hidden="true" tabindex="-1"></a>one <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">one =</span> <span class="dv">1</span>, <span class="at">two =</span> <span class="dv">2</span>, <span class="at">three =</span> <span class="dv">3</span>)</span>
+<span id="cb16-3"><a href="attributes.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="attributes.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. By assigning a character vector of names</span></span>
+<span id="cb16-5"><a href="attributes.html#cb16-5" aria-hidden="true" tabindex="-1"></a>two <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb16-6"><a href="attributes.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(two) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;one&quot;</span>, <span class="st">&quot;two&quot;</span>, <span class="st">&quot;three&quot;</span>)</span>
+<span id="cb16-7"><a href="attributes.html#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="attributes.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. By setting names--with base R</span></span>
+<span id="cb16-9"><a href="attributes.html#cb16-9" aria-hidden="true" tabindex="-1"></a>three <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb16-10"><a href="attributes.html#cb16-10" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">setNames</span>(</span>
+<span id="cb16-11"><a href="attributes.html#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">object =</span> three, </span>
+<span id="cb16-12"><a href="attributes.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">nm =</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>, <span class="st">&quot;Three&quot;</span>)</span>
+<span id="cb16-13"><a href="attributes.html#cb16-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-14"><a href="attributes.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   One   Two Three </span></span>
+<span id="cb16-15"><a href="attributes.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     1     2     3</span></span>
+<span id="cb16-16"><a href="attributes.html#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="attributes.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. By setting names--with {rlang}</span></span>
+<span id="cb16-18"><a href="attributes.html#cb16-18" aria-hidden="true" tabindex="-1"></a>rlang<span class="sc">::</span><span class="fu">set_names</span>(</span>
+<span id="cb16-19"><a href="attributes.html#cb16-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> three,</span>
+<span id="cb16-20"><a href="attributes.html#cb16-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">nm =</span> <span class="fu">c</span>(<span class="st">&quot;One&quot;</span>, <span class="st">&quot;Two&quot;</span>, <span class="st">&quot;Three&quot;</span>)</span>
+<span id="cb16-21"><a href="attributes.html#cb16-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-22"><a href="attributes.html#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   One   Two Three </span></span>
+<span id="cb16-23"><a href="attributes.html#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;     1     2     3</span></span></code></pre></div>
+<p>Thematically but not directly related: labelled class vectors with <code>haven::labelled()</code></p>
+<p><strong>Dimensions</strong></p>
+<p>Important for arrays and matrices.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="attributes.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># length 6 vector spread across 2 rows of 3 columns</span></span>
+<span id="cb17-2"><a href="attributes.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb17-3"><a href="attributes.html#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      [,1] [,2] [,3]</span></span>
+<span id="cb17-4"><a href="attributes.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1,]    1    3    5</span></span>
+<span id="cb17-5"><a href="attributes.html#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [2,]    2    4    6</span></span></code></pre></div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="subsetting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meeting-videos-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="atomic-vectors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="s3-atomic-vectors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -583,7 +681,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-advr/edit/main/04_Subsetting.Rmd",
+"link": "https://github.com/r4ds/bookclub-advr/edit/main/03_Vectors.Rmd",
 "text": "Edit"
 },
 "history": {

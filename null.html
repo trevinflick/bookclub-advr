@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1 SLIDE 1 | Advanced R Book Club</title>
+  <title>3.7 NULL | Advanced R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta property="og:title" content="3.7 NULL | Advanced R Book Club" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-advr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta name="twitter:title" content="3.7 NULL | Advanced R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="subsetting.html"/>
-<link rel="next" href="meeting-videos-3.html"/>
+<link rel="prev" href="data-frames-and-tibbles.html"/>
+<link rel="next" href="meeting-videos-2.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -539,20 +539,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="slide-1-1" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> SLIDE 1<a href="slide-1-1.html#slide-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="null" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> <code>NULL</code><a href="null.html#null" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Special type of object that:</p>
 <ul>
-<li>ADD SLIDES AS SECTIONS (<code>##</code>).</li>
-<li>TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>Length 0</li>
+<li>Cannot have attributes</li>
 </ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="null.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(<span class="cn">NULL</span>)</span>
+<span id="cb33-2"><a href="null.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;NULL&quot;</span></span>
+<span id="cb33-3"><a href="null.html#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;NULL&quot;</span></span>
+<span id="cb33-4"><a href="null.html#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="null.html#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="cn">NULL</span>)</span>
+<span id="cb33-6"><a href="null.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0</span></span>
+<span id="cb33-7"><a href="null.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0</span></span>
+<span id="cb33-8"><a href="null.html#cb33-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-9"><a href="null.html#cb33-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb33-10"><a href="null.html#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(x, <span class="st">&quot;y&quot;</span>) <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb33-11"><a href="null.html#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error in attr(x, &quot;y&quot;) &lt;- 1: attempt to set an attribute on NULL</span></span></code></pre></div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="subsetting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meeting-videos-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="data-frames-and-tibbles.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="meeting-videos-2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -583,7 +595,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-advr/edit/main/04_Subsetting.Rmd",
+"link": "https://github.com/r4ds/bookclub-advr/edit/main/03_Vectors.Rmd",
 "text": "Edit"
 },
 "history": {

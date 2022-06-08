@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1 SLIDE 1 | Advanced R Book Club</title>
+  <title>3.5 Lists | Advanced R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta property="og:title" content="3.5 Lists | Advanced R Book Club" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-advr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta name="twitter:title" content="3.5 Lists | Advanced R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="subsetting.html"/>
-<link rel="next" href="meeting-videos-3.html"/>
+<link rel="prev" href="s3-atomic-vectors.html"/>
+<link rel="next" href="data-frames-and-tibbles.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -539,20 +539,110 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="slide-1-1" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> SLIDE 1<a href="slide-1-1.html#slide-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="lists" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Lists<a href="lists.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes called a generic vector, a list can be composed of elements of different types.</p>
+<div id="constructing" class="section level3 hasAnchor" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Constructing<a href="lists.html#constructing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Simple lists:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="lists.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct</span></span>
+<span id="cb23-2"><a href="lists.html#cb23-2" aria-hidden="true" tabindex="-1"></a>simple_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb23-3"><a href="lists.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># logicals</span></span>
+<span id="cb23-4"><a href="lists.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>),</span>
+<span id="cb23-5"><a href="lists.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># integers</span></span>
+<span id="cb23-6"><a href="lists.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>,</span>
+<span id="cb23-7"><a href="lists.html#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># doubles</span></span>
+<span id="cb23-8"><a href="lists.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="fl">1.2</span>, <span class="fl">2.3</span>, <span class="fl">3.4</span>),</span>
+<span id="cb23-9"><a href="lists.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># characters</span></span>
+<span id="cb23-10"><a href="lists.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(<span class="st">&quot;primo&quot;</span>, <span class="st">&quot;secundo&quot;</span>, <span class="st">&quot;tercio&quot;</span>)</span>
+<span id="cb23-11"><a href="lists.html#cb23-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-12"><a href="lists.html#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="lists.html#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect</span></span>
+<span id="cb23-14"><a href="lists.html#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># - type</span></span>
+<span id="cb23-15"><a href="lists.html#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(simple_list)</span>
+<span id="cb23-16"><a href="lists.html#cb23-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;list&quot;</span></span>
+<span id="cb23-17"><a href="lists.html#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># - structure</span></span>
+<span id="cb23-18"><a href="lists.html#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(simple_list)</span>
+<span id="cb23-19"><a href="lists.html#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; List of 4</span></span>
+<span id="cb23-20"><a href="lists.html#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : logi [1:2] TRUE FALSE</span></span>
+<span id="cb23-21"><a href="lists.html#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : int [1:20] 1 2 3 4 5 6 7 8 9 10 ...</span></span>
+<span id="cb23-22"><a href="lists.html#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : num [1:3] 1.2 2.3 3.4</span></span>
+<span id="cb23-23"><a href="lists.html#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : chr [1:3] &quot;primo&quot; &quot;secundo&quot; &quot;tercio&quot;</span></span></code></pre></div>
+<p>Nested lists:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="lists.html#cb24-1" aria-hidden="true" tabindex="-1"></a>nested_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb24-2"><a href="lists.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># first level</span></span>
+<span id="cb24-3"><a href="lists.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(</span>
+<span id="cb24-4"><a href="lists.html#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># second level</span></span>
+<span id="cb24-5"><a href="lists.html#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb24-6"><a href="lists.html#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="co"># third level</span></span>
+<span id="cb24-7"><a href="lists.html#cb24-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">list</span>(<span class="dv">1</span>)</span>
+<span id="cb24-8"><a href="lists.html#cb24-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb24-9"><a href="lists.html#cb24-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb24-10"><a href="lists.html#cb24-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-11"><a href="lists.html#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="lists.html#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(nested_list)</span>
+<span id="cb24-13"><a href="lists.html#cb24-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; List of 1</span></span>
+<span id="cb24-14"><a href="lists.html#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ :List of 1</span></span>
+<span id="cb24-15"><a href="lists.html#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ..$ :List of 1</span></span>
+<span id="cb24-16"><a href="lists.html#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   .. ..$ :List of 1</span></span>
+<span id="cb24-17"><a href="lists.html#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   .. .. ..$ : num 1</span></span></code></pre></div>
+<p>Like JSON.</p>
+<p>Combined lists</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="lists.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># with list()</span></span>
+<span id="cb25-2"><a href="lists.html#cb25-2" aria-hidden="true" tabindex="-1"></a>list_comb1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb25-3"><a href="lists.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># with c()</span></span>
+<span id="cb25-4"><a href="lists.html#cb25-4" aria-hidden="true" tabindex="-1"></a>list_comb2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">list</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb25-5"><a href="lists.html#cb25-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-6"><a href="lists.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co"># compare structure</span></span>
+<span id="cb25-7"><a href="lists.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(list_comb1)</span>
+<span id="cb25-8"><a href="lists.html#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; List of 2</span></span>
+<span id="cb25-9"><a href="lists.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ :List of 2</span></span>
+<span id="cb25-10"><a href="lists.html#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ..$ : num 1</span></span>
+<span id="cb25-11"><a href="lists.html#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ..$ : num 2</span></span>
+<span id="cb25-12"><a href="lists.html#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ :List of 2</span></span>
+<span id="cb25-13"><a href="lists.html#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ..$ : num 3</span></span>
+<span id="cb25-14"><a href="lists.html#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   ..$ : num 4</span></span>
+<span id="cb25-15"><a href="lists.html#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(list_comb2)</span>
+<span id="cb25-16"><a href="lists.html#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; List of 4</span></span>
+<span id="cb25-17"><a href="lists.html#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : num 1</span></span>
+<span id="cb25-18"><a href="lists.html#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : num 2</span></span>
+<span id="cb25-19"><a href="lists.html#cb25-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : num 3</span></span>
+<span id="cb25-20"><a href="lists.html#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ : num 4</span></span></code></pre></div>
+</div>
+<div id="testing-1" class="section level3 hasAnchor" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Testing<a href="lists.html#testing-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Check that is a list:</p>
 <ul>
-<li>ADD SLIDES AS SECTIONS (<code>##</code>).</li>
-<li>TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li><code>is.list()</code></li>
+<li>`rlang::is_list()``</li>
 </ul>
+<p>The two do the same, except that the latter can check for the number of elements</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="lists.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># is list</span></span>
+<span id="cb26-2"><a href="lists.html#cb26-2" aria-hidden="true" tabindex="-1"></a>base<span class="sc">::</span><span class="fu">is.list</span>(list_comb2)</span>
+<span id="cb26-3"><a href="lists.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb26-4"><a href="lists.html#cb26-4" aria-hidden="true" tabindex="-1"></a>rlang<span class="sc">::</span><span class="fu">is_list</span>(list_comb2)</span>
+<span id="cb26-5"><a href="lists.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb26-6"><a href="lists.html#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="lists.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co"># is list of 4 elements</span></span>
+<span id="cb26-8"><a href="lists.html#cb26-8" aria-hidden="true" tabindex="-1"></a>rlang<span class="sc">::</span><span class="fu">is_list</span>(<span class="at">x =</span> list_comb2, <span class="at">n =</span> <span class="dv">4</span>)</span>
+<span id="cb26-9"><a href="lists.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
+<span id="cb26-10"><a href="lists.html#cb26-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-11"><a href="lists.html#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co"># is a vector (of a special type)</span></span>
+<span id="cb26-12"><a href="lists.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co"># remember the family tree?</span></span>
+<span id="cb26-13"><a href="lists.html#cb26-13" aria-hidden="true" tabindex="-1"></a>rlang<span class="sc">::</span><span class="fu">is_vector</span>(list_comb2)</span>
+<span id="cb26-14"><a href="lists.html#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span></code></pre></div>
+</div>
+<div id="coercion-1" class="section level3 hasAnchor" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> Coercion<a href="lists.html#coercion-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="subsetting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meeting-videos-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="s3-atomic-vectors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-frames-and-tibbles.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -583,7 +673,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-advr/edit/main/04_Subsetting.Rmd",
+"link": "https://github.com/r4ds/bookclub-advr/edit/main/03_Vectors.Rmd",
 "text": "Edit"
 },
 "history": {

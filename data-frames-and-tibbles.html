@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4.1 SLIDE 1 | Advanced R Book Club</title>
+  <title>3.6 Data frames and tibbles | Advanced R Book Club</title>
   <meta name="description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta property="og:title" content="3.6 Data frames and tibbles | Advanced R Book Club" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   <meta name="github-repo" content="r4ds/bookclub-advr" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4.1 SLIDE 1 | Advanced R Book Club" />
+  <meta name="twitter:title" content="3.6 Data frames and tibbles | Advanced R Book Club" />
   
   <meta name="twitter:description" content="This is the product of the R4DS Online Learning Community’s Advanced R Book Club." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="subsetting.html"/>
-<link rel="next" href="meeting-videos-3.html"/>
+<link rel="prev" href="lists.html"/>
+<link rel="next" href="null.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -539,20 +539,195 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="slide-1-1" class="section level2 hasAnchor" number="4.1">
-<h2><span class="header-section-number">4.1</span> SLIDE 1<a href="slide-1-1.html#slide-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="data-frames-and-tibbles" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Data frames and tibbles<a href="data-frames-and-tibbles.html#data-frames-and-tibbles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>ADD SLIDES AS SECTIONS (<code>##</code>).</li>
-<li>TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.</li>
+<li>The vector family tree revisited.</li>
+<li>Meet the children of lists</li>
 </ul>
+<p><img src="images/vectors/summary-tree-s3-2.png" />
+Credit: <a href="https://adv-r.hadley.nz/index.html">Advanced R</a> by Hadley Wickham</p>
+<div id="data-frame" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Data frame<a href="data-frames-and-tibbles.html#data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A data frame is a:</p>
+<ul>
+<li>Named list of vectors (i.e., column names)</li>
+<li>Class: “data frame”</li>
+<li>Attributes:
+<ul>
+<li>(column) <code>names</code></li>
+<li>`row.names``</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-frames-and-tibbles.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct</span></span>
+<span id="cb27-2"><a href="data-frames-and-tibbles.html#cb27-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb27-3"><a href="data-frames-and-tibbles.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># named atomic vector</span></span>
+<span id="cb27-4"><a href="data-frames-and-tibbles.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb27-5"><a href="data-frames-and-tibbles.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># another named atomic vector</span></span>
+<span id="cb27-6"><a href="data-frames-and-tibbles.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">col2 =</span> <span class="fu">c</span>(<span class="st">&quot;un&quot;</span>, <span class="st">&quot;deux&quot;</span>, <span class="st">&quot;trois&quot;</span>),</span>
+<span id="cb27-7"><a href="data-frames-and-tibbles.html#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># not necessary after R 4.1 (?)</span></span>
+<span id="cb27-8"><a href="data-frames-and-tibbles.html#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span></span>
+<span id="cb27-9"><a href="data-frames-and-tibbles.html#cb27-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-10"><a href="data-frames-and-tibbles.html#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="data-frames-and-tibbles.html#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Inspect</span></span>
+<span id="cb27-12"><a href="data-frames-and-tibbles.html#cb27-12" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb27-13"><a href="data-frames-and-tibbles.html#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;   col1  col2</span></span>
+<span id="cb27-14"><a href="data-frames-and-tibbles.html#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1    1    un</span></span>
+<span id="cb27-15"><a href="data-frames-and-tibbles.html#cb27-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2    2  deux</span></span>
+<span id="cb27-16"><a href="data-frames-and-tibbles.html#cb27-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3    3 trois</span></span>
+<span id="cb27-17"><a href="data-frames-and-tibbles.html#cb27-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="data-frames-and-tibbles.html#cb27-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Deconstruct</span></span>
+<span id="cb27-19"><a href="data-frames-and-tibbles.html#cb27-19" aria-hidden="true" tabindex="-1"></a><span class="co"># - type</span></span>
+<span id="cb27-20"><a href="data-frames-and-tibbles.html#cb27-20" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(df)</span>
+<span id="cb27-21"><a href="data-frames-and-tibbles.html#cb27-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;list&quot;</span></span>
+<span id="cb27-22"><a href="data-frames-and-tibbles.html#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="co"># - attributes</span></span>
+<span id="cb27-23"><a href="data-frames-and-tibbles.html#cb27-23" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(df)</span>
+<span id="cb27-24"><a href="data-frames-and-tibbles.html#cb27-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $names</span></span>
+<span id="cb27-25"><a href="data-frames-and-tibbles.html#cb27-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;col1&quot; &quot;col2&quot;</span></span>
+<span id="cb27-26"><a href="data-frames-and-tibbles.html#cb27-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb27-27"><a href="data-frames-and-tibbles.html#cb27-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $class</span></span>
+<span id="cb27-28"><a href="data-frames-and-tibbles.html#cb27-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;data.frame&quot;</span></span>
+<span id="cb27-29"><a href="data-frames-and-tibbles.html#cb27-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb27-30"><a href="data-frames-and-tibbles.html#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; $row.names</span></span>
+<span id="cb27-31"><a href="data-frames-and-tibbles.html#cb27-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3</span></span></code></pre></div>
+<p>Unlike other lists, the length of each vector must be the same (i.e. as many vector elements as rows in the data frame).</p>
+</div>
+<div id="tibble" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Tibble<a href="data-frames-and-tibbles.html#tibble" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>As compared to data frames, tibbles are data frames that are:</p>
+<ul>
+<li>Lazy</li>
+<li>Surly</li>
+</ul>
+<div id="lazy" class="section level4 hasAnchor" number="3.6.2.1">
+<h4><span class="header-section-number">3.6.2.1</span> Lazy<a href="data-frames-and-tibbles.html#lazy" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tibbles do not:</p>
+<ul>
+<li>Coerce strings</li>
+<li>Transform non-syntactic names</li>
+<li>Recycle vectors of length greater than 1</li>
+</ul>
+<p><strong>Coerce strings</strong></p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-frames-and-tibbles.html#cb28-1" aria-hidden="true" tabindex="-1"></a>chr_col <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;don&#39;t&quot;</span>, <span class="st">&quot;factor&quot;</span>, <span class="st">&quot;me&quot;</span>, <span class="st">&quot;bro&quot;</span>)</span>
+<span id="cb28-2"><a href="data-frames-and-tibbles.html#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-3"><a href="data-frames-and-tibbles.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame</span></span>
+<span id="cb28-4"><a href="data-frames-and-tibbles.html#cb28-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-5"><a href="data-frames-and-tibbles.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> chr_col,</span>
+<span id="cb28-6"><a href="data-frames-and-tibbles.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># in R 4.1 and earlier, this was the default</span></span>
+<span id="cb28-7"><a href="data-frames-and-tibbles.html#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span></span>
+<span id="cb28-8"><a href="data-frames-and-tibbles.html#cb28-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-9"><a href="data-frames-and-tibbles.html#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="data-frames-and-tibbles.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co"># tibble</span></span>
+<span id="cb28-11"><a href="data-frames-and-tibbles.html#cb28-11" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb28-12"><a href="data-frames-and-tibbles.html#cb28-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">a =</span> chr_col</span>
+<span id="cb28-13"><a href="data-frames-and-tibbles.html#cb28-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-14"><a href="data-frames-and-tibbles.html#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="data-frames-and-tibbles.html#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co"># contrast the structure</span></span>
+<span id="cb28-16"><a href="data-frames-and-tibbles.html#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df<span class="sc">$</span>a)</span>
+<span id="cb28-17"><a href="data-frames-and-tibbles.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  Factor w/ 4 levels &quot;bro&quot;,&quot;don&#39;t&quot;,..: 2 3 4 1</span></span>
+<span id="cb28-18"><a href="data-frames-and-tibbles.html#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tbl<span class="sc">$</span>a)</span>
+<span id="cb28-19"><a href="data-frames-and-tibbles.html#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  chr [1:4] &quot;don&#39;t&quot; &quot;factor&quot; &quot;me&quot; &quot;bro&quot;</span></span></code></pre></div>
+<p><strong>Transform non-syntactic names</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-frames-and-tibbles.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame</span></span>
+<span id="cb29-2"><a href="data-frames-and-tibbles.html#cb29-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb29-3"><a href="data-frames-and-tibbles.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-4"><a href="data-frames-and-tibbles.html#cb29-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-5"><a href="data-frames-and-tibbles.html#cb29-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-6"><a href="data-frames-and-tibbles.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tibble</span></span>
+<span id="cb29-7"><a href="data-frames-and-tibbles.html#cb29-7" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb29-8"><a href="data-frames-and-tibbles.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb29-9"><a href="data-frames-and-tibbles.html#cb29-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb29-10"><a href="data-frames-and-tibbles.html#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="data-frames-and-tibbles.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="co"># contrast the names</span></span>
+<span id="cb29-12"><a href="data-frames-and-tibbles.html#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)</span>
+<span id="cb29-13"><a href="data-frames-and-tibbles.html#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;X1&quot;</span></span>
+<span id="cb29-14"><a href="data-frames-and-tibbles.html#cb29-14" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(tbl)</span>
+<span id="cb29-15"><a href="data-frames-and-tibbles.html#cb29-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;1&quot;</span></span></code></pre></div>
+<p><strong>Recycle vectors of length greater than 1</strong></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-frames-and-tibbles.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame</span></span>
+<span id="cb30-2"><a href="data-frames-and-tibbles.html#cb30-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb30-3"><a href="data-frames-and-tibbles.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb30-4"><a href="data-frames-and-tibbles.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">col2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb30-5"><a href="data-frames-and-tibbles.html#cb30-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-6"><a href="data-frames-and-tibbles.html#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="data-frames-and-tibbles.html#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># tibble</span></span>
+<span id="cb30-8"><a href="data-frames-and-tibbles.html#cb30-8" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb30-9"><a href="data-frames-and-tibbles.html#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">col1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb30-10"><a href="data-frames-and-tibbles.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">col2 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb30-11"><a href="data-frames-and-tibbles.html#cb30-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-12"><a href="data-frames-and-tibbles.html#cb30-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error:</span></span>
+<span id="cb30-13"><a href="data-frames-and-tibbles.html#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ! Tibble columns must have compatible sizes.</span></span>
+<span id="cb30-14"><a href="data-frames-and-tibbles.html#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 4: Existing data.</span></span>
+<span id="cb30-15"><a href="data-frames-and-tibbles.html#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; • Size 2: Column `col2`.</span></span>
+<span id="cb30-16"><a href="data-frames-and-tibbles.html#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; ℹ Only values of size one are recycled.</span></span></code></pre></div>
+</div>
+<div id="surly" class="section level4 hasAnchor" number="3.6.2.2">
+<h4><span class="header-section-number">3.6.2.2</span> Surly<a href="data-frames-and-tibbles.html#surly" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tibbles do only what they’re asked and complain if what they’re asked doesn’t make sense:</p>
+<ul>
+<li>Subsetting always yields a tibble</li>
+<li>Complains if cannot find column</li>
+</ul>
+<p><strong>Subsetting always yields a tibble</strong></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-frames-and-tibbles.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data frame</span></span>
+<span id="cb31-2"><a href="data-frames-and-tibbles.html#cb31-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb31-3"><a href="data-frames-and-tibbles.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">col1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb31-4"><a href="data-frames-and-tibbles.html#cb31-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-5"><a href="data-frames-and-tibbles.html#cb31-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="data-frames-and-tibbles.html#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tibble</span></span>
+<span id="cb31-7"><a href="data-frames-and-tibbles.html#cb31-7" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(</span>
+<span id="cb31-8"><a href="data-frames-and-tibbles.html#cb31-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">col1 =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb31-9"><a href="data-frames-and-tibbles.html#cb31-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb31-10"><a href="data-frames-and-tibbles.html#cb31-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-11"><a href="data-frames-and-tibbles.html#cb31-11" aria-hidden="true" tabindex="-1"></a><span class="co"># contrast</span></span>
+<span id="cb31-12"><a href="data-frames-and-tibbles.html#cb31-12" aria-hidden="true" tabindex="-1"></a>df_col <span class="ot">&lt;-</span> df[, <span class="st">&quot;col1&quot;</span>]</span>
+<span id="cb31-13"><a href="data-frames-and-tibbles.html#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(df_col)</span>
+<span id="cb31-14"><a href="data-frames-and-tibbles.html#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  num [1:4] 1 2 3 4</span></span>
+<span id="cb31-15"><a href="data-frames-and-tibbles.html#cb31-15" aria-hidden="true" tabindex="-1"></a>tbl_col <span class="ot">&lt;-</span> tbl[, <span class="st">&quot;col1&quot;</span>]</span>
+<span id="cb31-16"><a href="data-frames-and-tibbles.html#cb31-16" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tbl_col)</span>
+<span id="cb31-17"><a href="data-frames-and-tibbles.html#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; tibble [4 × 1] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb31-18"><a href="data-frames-and-tibbles.html#cb31-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ col1: num [1:4] 1 2 3 4</span></span>
+<span id="cb31-19"><a href="data-frames-and-tibbles.html#cb31-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-20"><a href="data-frames-and-tibbles.html#cb31-20" aria-hidden="true" tabindex="-1"></a><span class="co"># to select a vector, do one of these instead</span></span>
+<span id="cb31-21"><a href="data-frames-and-tibbles.html#cb31-21" aria-hidden="true" tabindex="-1"></a>tbl_col_1 <span class="ot">&lt;-</span> tbl[[<span class="st">&quot;col1&quot;</span>]]</span>
+<span id="cb31-22"><a href="data-frames-and-tibbles.html#cb31-22" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tbl_col_1)</span>
+<span id="cb31-23"><a href="data-frames-and-tibbles.html#cb31-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  num [1:4] 1 2 3 4</span></span>
+<span id="cb31-24"><a href="data-frames-and-tibbles.html#cb31-24" aria-hidden="true" tabindex="-1"></a>tbl_col_2 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">pull</span>(tbl, col1)</span>
+<span id="cb31-25"><a href="data-frames-and-tibbles.html#cb31-25" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tbl_col_2)</span>
+<span id="cb31-26"><a href="data-frames-and-tibbles.html#cb31-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  num [1:4] 1 2 3 4</span></span></code></pre></div>
+<p><strong>Complains if cannot find column</strong></p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-frames-and-tibbles.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df)</span>
+<span id="cb32-2"><a href="data-frames-and-tibbles.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;col1&quot;</span></span>
+<span id="cb32-3"><a href="data-frames-and-tibbles.html#cb32-3" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>col</span>
+<span id="cb32-4"><a href="data-frames-and-tibbles.html#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 1 2 3 4</span></span>
+<span id="cb32-5"><a href="data-frames-and-tibbles.html#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="data-frames-and-tibbles.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(tbl)</span>
+<span id="cb32-7"><a href="data-frames-and-tibbles.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;col1&quot;</span></span>
+<span id="cb32-8"><a href="data-frames-and-tibbles.html#cb32-8" aria-hidden="true" tabindex="-1"></a>tbl<span class="sc">$</span>col</span>
+<span id="cb32-9"><a href="data-frames-and-tibbles.html#cb32-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Warning: Unknown or uninitialised column: `col`.</span></span>
+<span id="cb32-10"><a href="data-frames-and-tibbles.html#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; NULL</span></span></code></pre></div>
+</div>
+</div>
+<div id="testing-2" class="section level3 hasAnchor" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> Testing<a href="data-frames-and-tibbles.html#testing-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Whether data frame: <code>is.data.frame()</code>. Note: both data frame and tibble are data frames.</p>
+<p>Whether tibble: <code>tibble::is_tibble</code>. Note: only tibbles are tibbles. Vanilla data frames are not.</p>
+</div>
+<div id="coercion-2" class="section level3 hasAnchor" number="3.6.4">
+<h3><span class="header-section-number">3.6.4</span> Coercion<a href="data-frames-and-tibbles.html#coercion-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>To data frame: <code>as.data.frame()</code></li>
+<li>To tibble: <code>tibble::as_tibble()</code></li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="subsetting.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="meeting-videos-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="lists.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="null.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -583,7 +758,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/r4ds/bookclub-advr/edit/main/04_Subsetting.Rmd",
+"link": "https://github.com/r4ds/bookclub-advr/edit/main/03_Vectors.Rmd",
 "text": "Edit"
 },
 "history": {
