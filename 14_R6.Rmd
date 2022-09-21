@@ -1,13 +1,176 @@
 # R6
 
-**Learning objectives:**
+**Learning Objectives**
 
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+```{r hex, echo=FALSE,fig.align='center', fig.cap="Credits: https://r6.r-lib.org/index.html"}
+knitr::include_graphics("images/r6_hex.svg")
+```
 
-## SLIDE 1
+-   Overview of R6
+-   Learn about encapsulation   
 
-- ADD SLIDES AS SECTIONS (`##`).
-- TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+## Introduction
+
+-   Developed by Winston Chang (RStudio)
+-   Why R6? Following S3 and S4 users called new system R5 in jest. R5 different system developed by Simon Urbanek (R core), never fully developed.
+
+### Two special properties
+  - Encapsulated Object Oriented Programming
+  - Objects are mutable and modified in place (reference semantics)
+
+## Classes and methods
+
+```{r}
+# install.packages("R6")
+library(R6)
+```
+
+```{r}
+BankAccount <- R6Class("BankAccount", list(
+  checking = 0,
+  deposit = function(x) {
+    self$checking <- self$checking + x 
+    invisible(self)
+  },
+  withdraw = function(x) {
+    self$checking <- self$checking - x 
+    invisible(self)
+  })
+  
+)
+```
+
+```{r}
+trevin <- BankAccount$new()
+
+trevin$deposit(100)
+
+trevin$withdraw(10)$withdraw(10)
+
+trevin$
+  withdraw(5)$
+  withdraw(5)
+
+trevin
+```
+
+### Inheritance
+
+```{r}
+library(scales)
+
+PromotionBankAccount <- R6Class("PromotionBankAccount", 
+  inherit = BankAccount,
+  public = list(
+    checking = 100,
+    print = function(...) {
+      cat("Balance ", scales::dollar(self$checking))
+      invisible(self)
+    }
+  )
+)
+```
+
+
+```{r}
+ryan <- PromotionBankAccount$new()
+
+ryan
+```
+
+### Introspection
+
+```{r}
+library(waiter)
+
+my_waiter <- Waiter$new()
+
+class(my_waiter)
+
+names(my_waiter)
+```
+
+
+### Important methods
+
+-   `$initialize()` and `$print()`
+
+```{r}
+Person <- R6Class("Person", list(
+  name = NULL,
+  age = NA,
+  initialize = function(name, age = NA) {
+    stopifnot(is.character(name), length(name) == 1)
+    stopifnot(is.numeric(age), length(age) == 1)
+    
+    self$name <- name
+    self$age <- age
+  },
+  print = function(...) {
+    cat("Person: \n")
+    cat("  Name: ", self$name, "\n", sep = "")
+    cat("  Age:  ", self$age, "\n", sep = "")
+    invisible(self)
+  }
+))
+```
+
+
+
+
+
+
+## Controlling access
+
+-   `private` allows you to creates fields and methods that are only available within the class
+
+```{r}
+BankAccountStrict <- R6Class(
+  classname = "BankAccountStrict",
+  public = list(
+    deposit = function(dep = 0) {
+      private$balance <- private$balance + dep
+      invisible(self)
+    },
+    withdraw = function(draw = 0) {
+      if (private$balance - draw < 0) {
+        stop(
+          "Your `withdraw` must be smaller ",
+          "than your `balance`.",
+          call. = FALSE
+        )
+      }
+      private$balance <- private$balance - draw
+      invisible(self)
+    }
+  ),
+  private = list(
+    balance = 0
+  )
+)
+```
+
+```{r}
+federica <- BankAccountStrict$new()
+
+federica$deposit(100)
+# federica$withdraw(200)
+#> Error: Your `withdraw` must be smaller than your `balance`.
+```
+
+
+## Reference Semantics
+
+-   R6 uses reference semantics, objects are not copied when modified
+-   to get a copy use `$clone()`
+
+```{r}
+# z <- f(x, y)
+```
+
+-   "This is the biggest potential downside of R6 and you should take care to avoid it by writing functions that either return a value, or modify their R6 inputs, but not both."
+
+-   `$finalize()` complement to `$initialize()`, similar to `on.exit()`, used to clean up and delete resources created by the initializer
 
 ## Meeting Videos
 
@@ -38,9 +201,13 @@
 `r knitr::include_url("https://www.youtube.com/embed/URL")`
 
 <details>
-<summary> Meeting chat log </summary>
 
-```
-LOG
-```
+<summary>
+
+Meeting chat log
+
+</summary>
+
+    LOG
+
 </details>

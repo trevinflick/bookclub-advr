@@ -29,4 +29,6 @@ Imports:
     patchwork,
     memoise,
     purrr,
-    sloop
+    sloop,
+    R6,
+    waiter
