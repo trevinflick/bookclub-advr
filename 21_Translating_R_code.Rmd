@@ -2,12 +2,60 @@
 
 **Learning objectives:**
 
-- THESE ARE NICE TO HAVE BUT NOT ABSOLUTELY NECESSARY
+- Why translating R code may be useful
+- An overview of Domain Specific Languages (DSL)
+- Walkthrough translating R code into HTML
 
-## SLIDE 1
+## Why translate?
 
-- ADD SLIDES AS SECTIONS (`##`).
-- TRY TO KEEP THEM RELATIVELY SLIDE-LIKE; THESE ARE NOTES, NOT THE BOOK ITSELF.
+- easier to work iteratively
+- can wrap a common operation in a function
+- may want to keep it in one language, easier to collaborate with others
+
+```{r, message=FALSE}
+library(dplyr)
+library(dbplyr)
+
+mf <- memdb_frame(x = 1, y = 2)
+
+mf |>  
+  mutate(
+    a = y * x, 
+    b = a ^ 2,
+  ) %>% 
+  show_query()
+```
+
+[dbplyr - sql](https://dbplyr.tidyverse.org/articles/sql.html)
+
+## DSL
+
+> The basic idea of a Domain-Specific Language (DSL) is a computer language that's targeted to a particular kind of problem, rather than a general purpose language that's aimed at any kind of software problem. Domain-specific languages have been talked about, and used for almost as long as computing has been done.
+
+> DSLs are very common in computing: examples include CSS, regular expressions, make, rake, ant, SQL, HQL, many bits of Rails, expectations in JMock, graphviz's dot language, FIT, strut's configuration file....
+
+[- Martin Fowler](https://martinfowler.com/bliki/DomainSpecificLanguage.html)
+
+## HTML
+
+- powerful DSL for webpages
+
+- an example:
+
+```{html}
+<body>
+  <h1 id='first'>A heading</h1>
+  <p>Some text &amp; <b>some bold text.</b></p>
+  <img src='myimg.png' width='100' height='100' />
+</body>
+```
+
+`<` and `>` have special meanings in HTML
+need to use **escapes**: `&gt;` and `&lt;`
+
+`&amp;` for `&`
+
+
 
 ## Meeting Videos
 
